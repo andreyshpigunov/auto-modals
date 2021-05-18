@@ -1,0 +1,14 @@
+.DS_Store
+
+i/logo.pxd
+
+.nova
+.parcel-cache
+.sass-cache
+*.css.map
+*.sass.map
+*.scss.map
+
+*.log
+
+node_modules

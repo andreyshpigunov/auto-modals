@@ -1,0 +1,157 @@
+/*-------------------------------------
+_typo.css
+auto
+
+Created by Andrey Shpigunov on 10.05.2021
+Copyright © 2021 . All rights reserved.
+-------------------------------------*/
+
+
+
+/* Typo */
+
+body,
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: var(--font-size);
+	font-synthesis: initial;
+	text-rendering: optimizeLegibility;
+	-moz-font-feature-settings: 'liga', 'kern';
+}
+
+.antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin-bottom: var(--headers-margin-bottom);
+	font-weight: var(--headers-font-weight);
+}
+* + h1, * + .h1,
+* + h2, * + .h2,
+* + h3, * + .h3,
+* + h4, * + .h4,
+* + h5, * + .h5,
+* + h6, * + .h6 {
+	margin-top: var(--headers-margin-top);
+}
+
+h1, .h1 {
+	font-size: var(--h1-font-size);
+}
+h2, .h2 {
+	font-size: var(--h2-font-size);
+}
+h3, .h3 {
+	font-size: var(--h3-font-size);
+}
+h4, .h4 {
+	font-size: var(--h4-font-size);
+}
+h5, .h5 {
+	font-size: var(--h5-font-size);
+}
+h6, .h6 {
+	font-size: var(--h6-font-size);
+}
+
+p {
+	margin-bottom: var(--paragraph-margin-bottom);
+	font-style: inherit;
+	hyphens: auto;
+}
+
+figure {
+    margin-bottom: var(--paragraph-margin-bottom);
+    
+    & figcaption {
+        font-size: var(--figcaption-font-size);
+        color: var(--figcaption-color);
+    }
+}
+
+blockquote {
+    margin-bottom: var(--paragraph-margin-bottom);
+    padding: 1rem 1.6rem;
+    background: #fafafa;
+    font-style: italic;
+    hyphens: auto;
+
+    & p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+pre {
+    margin-bottom: var(--paragraph-margin-bottom);
+	font-family: inherit;
+}
+
+ul, ol {
+    margin-bottom: var(--paragraph-margin-bottom);
+	padding-left: 1.4rem;
+}
+ul {
+	list-style-type: disc;
+	list-style-position: inside;
+}
+ol {
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+ul ul,
+ol ul {
+	list-style-type: circle;
+	list-style-position: inside;
+}
+ol ol,
+ul ol {
+	list-style-type: lower-latin;
+	list-style-position: inside;
+}
+ul ol,
+ul ul,
+ol ol,
+ol ul {
+	margin: .2rem 0;
+	padding-left: 1.4rem;
+}
+ul li,
+ol li,
+dl dd {
+	margin: .2rem 0;
+}
+dl {
+    margin-bottom: var(--paragraph-margin-bottom);
+    
+    & dt { font-weight: bold; }
+    & dd { padding-left: 1.4rem; }
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+    
+    & caption {
+        margin-bottom: 4px;
+        padding: 0 10px;
+        font-weight: 700;
+        text-align: left;
+    }
+    & tr th,
+    & tr td {
+        padding: 6px 10px;
+        border: 1px solid #eee;
+        text-align: left;
+        vertical-align: top;
+    }
+}

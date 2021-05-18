@@ -1,0 +1,32 @@
+{
+	"name": "auto",
+	"version": "1.0.0",
+	"devDependencies": {
+		"autoprefixer": "^10.1.0",
+		"cssnano": "^5.0.2",
+		"parcel": "^2.0.0-beta.2",
+		"postcss": "^8.2.1",
+		"postcss-cli": "^8.3.0",
+		"postcss-custom-media": "^8.0.0",
+		"postcss-import": "^14.0.2",
+		"postcss-nesting": "^8.0.1"
+	},
+	"scripts": {
+		"styles": "postcss src/css/*.css --use postcss-import --use postcss-custom-media --use postcss-nesting --use autoprefixer --use cssnano --no-map --dir css/",
+		"scripts": "parcel build src/js/*.js --no-source-maps --dist-dir js/",
+		"build": "npm run styles && npm run scripts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/andreyshpigunov/auto.git"
+	},
+	"author": "Andrey Shpigunov",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/andreyshpigunov/auto/issues"
+	},
+	"homepage": "https://andreyshpigunov.github.io/auto/",
+	"browserslist": [
+		"defaults"
+	]
+}

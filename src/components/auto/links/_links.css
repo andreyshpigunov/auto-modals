@@ -1,0 +1,46 @@
+/*-------------------------------------
+_links.css
+auto
+
+Created by Andrey Shpigunov on 10.05.2021
+Copyright © 2021 . All rights reserved.
+-------------------------------------*/
+
+
+
+/* Links styles */
+
+a, a:link {
+    outline: none;
+    cursor: pointer;
+    color: var(--link-color);
+    text-decoration: none;
+}
+a:not(.button):visited {
+    color: var(--link-color-visited);
+}
+a:hover, a.hover,
+a:active, a.active {
+    color: var(--link-color-hovered);
+    text-decoration: underline;
+}
+a.pseudo {
+    text-decoration-style: dotted;
+}
+
+/* Remove underline from phones */
+
+a[href^="tel"],
+a[href^="tel"]:hover,
+a[href^="tel"]:active {
+    color: inherit !important;
+    text-decoration: inherit !important;
+    border: inherit !important;
+}
+
+/* Remove underline in embed Yandex.Maps links
+   If link with bottom border. */
+
+/* ymaps[class*="-copyright"] a {
+    border: none !important;
+} */

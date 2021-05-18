@@ -1,0 +1,265 @@
+/*-------------------------------------
+_modal.css
+auto
+
+Created by Andrey Shpigunov on 10.05.2021
+Copyright © 2021 . All rights reserved.
+-------------------------------------*/
+
+
+
+/* Modals */
+
+html.modal-active body {
+	overflow: hidden;
+}
+
+/* Modal window content */
+.modal-content {
+	display: none;
+}
+
+/* Main div */
+.modal {
+	position: fixed;
+	z-index: -10000;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0;
+	visibility: hidden;
+	pointer-events: none;
+    box-sizing: border-box;
+    
+    & * {
+        box-sizing: border-box;
+    }
+    
+    &.top {
+    	z-index: 10000;
+    	visibility: visible;
+    	pointer-events: all;
+        
+        &.level-1 { z-index: 10001; }
+        &.level-2 { z-index: 10002; }
+        &.level-3 { z-index: 10003; }
+        &.level-4 { z-index: 10004; }
+        &.level-5 { z-index: 10005; }
+        &.level-6 { z-index: 10006; }
+        &.level-7 { z-index: 10007; }
+        &.level-8 { z-index: 10008; }
+        &.level-9 { z-index: 10009; }
+        &.level-10 { z-index: 10010; }
+    }
+    
+    /* Overlay */
+    & .modal-overlay {
+    	position: absolute;
+    	z-index: 10010;
+    	top: 0;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+    	background-color: var(--modal-overlay-background-color);
+    }
+    
+    /* Main structure */
+    & .modal-outer {
+    	position: relative;
+    	z-index: 10020;
+    	width: 100%;
+    	height: 100%;
+    	padding: 60px;
+    	overflow: auto;
+    	-webkit-overflow-scrolling: touch;
+        
+        @media (--screen-small) {
+            & {
+                padding: 5px;
+            }
+        }
+    }
+    & .modal-inner {
+    	display: flex;
+    	flex-direction: column;
+    	min-height: 100%;
+    }
+    
+    /* Modal window */
+    & .modal-window {
+    	position: relative;
+    	z-index: 10030;
+    	width: 100%;
+    	max-width: 800px;
+    	margin: auto;
+    	padding: 40px 50px;
+    	text-align: left;
+    	background: var(--modal-background);
+    	box-shadow: var(--modal-box-shadow);
+    	border-radius: var(--modal-border-radius);
+        
+        @media (--screen-small) {
+            & {
+                padding: 40px 6vw;
+                box-shadow: none;
+            }
+        }
+    }
+    
+    /* Close cross */
+    & .modal-close {
+    	display: block;
+    	position: absolute;
+    	z-index: 10040;
+    	top: 6px;
+    	right: 6px;
+    	width: 40px;
+    	height: 40px;
+    	font-weight: 200;
+    	border: none;
+    	border-radius: 100%;
+        
+    	will-change: opacity;
+    	opacity: 0;
+    	transition: opacity .15s ease-out;
+        
+        &:before,
+        &:after {
+        	content: "";
+        	display: block;
+        	position: absolute;
+        	top: 19px;
+        	left: 8px;
+        	width: 24px;
+        	height: 2px;
+            
+        	will-change: color;
+        	background: var(--modal-closer-color);
+        	transition: background .15s ease-out;
+        	transform-origin: center;
+        }
+        &:before {
+        	transform: rotate(-45deg);
+        }
+        &:after {
+        	transform: rotate(45deg);
+        }
+    }
+    
+    &.active {
+        & .modal-close {
+            opacity: 1;
+            
+            &:hover:before, &:hover:after,
+            &:active:before, &:active:after {
+                background: #f00;
+            }
+        }
+    }
+}
+
+
+
+/* Effects
+   https://github.com/codrops/ModalWindowEffects */
+
+.modal {
+    & .modal-overlay {
+    	will-change: opacity;
+    	opacity: 0;
+    	transition: opacity .2s ease-out;
+    }
+    &.active .modal-overlay {
+    	opacity: 1;
+    }
+}
+
+/* Default */
+
+.modal {
+    & .modal-window {
+    	will-change: opacity, transform;
+    	opacity: 0;
+    	transform: scale(.97);
+    	transition: all .12s ease-out;
+    }
+    &.active .modal-window {
+    	transform: scale(1);
+    	opacity: 1;
+    }
+}
+
+/* Zoom in */
+
+.modal.effect-in {
+    & .modal-window {
+    	transform: scale(.9);
+    	transition: all .15s ease-out;
+    }
+    &.active .modal-window {
+    	transform: scale(1);
+    	transition: all .2s ease-out;
+    }
+}
+
+/* Zoom out */
+
+.modal.effect-out {
+    & .modal-window {
+    	transform: scale(1.1);
+    	transition: all .15s ease-out;
+    }
+    &.active .modal-window {
+    	transform: scale(1);
+    	transition: all .2s ease-out;
+    }
+}
+
+/* Slide up */
+
+.modal.effect-up {
+    & .modal-window {
+    	transform: translateY(30px);
+    	transition: all .2s ease-out;
+    }
+    &.active .modal-window {
+    	transform: translateY(0);
+    }
+}
+
+/* Slide down */
+
+.modal.effect-down {
+    & .modal-window {
+    	transform: translateY(-30px);
+    	transition: all .2s ease-out;
+    }
+    &.active .modal-window {
+    	transform: translateY(0);
+    }
+}
+
+/* Slide from left */
+
+.modal.effect-left {
+    & .modal-window {
+    	transform: translateX(-30px);
+    	transition: all .2s ease-out;
+    }
+    &.active .modal-window {
+    	transform: translateX(0);
+    }
+}
+
+/* Slide from right */
+
+.modal.effect-right {
+    & .modal-window {
+    	transform: translateX(30px);
+    	transition: all .2s ease-out;
+    }
+    &.active .modal-window {
+    	transform: translateX(0);
+    }
+}

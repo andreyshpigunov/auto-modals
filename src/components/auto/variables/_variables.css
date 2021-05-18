@@ -1,0 +1,33 @@
+/*-------------------------------------
+_variables.css
+auto
+
+Created by Andrey Shpigunov on 08.05.2021
+Copyright © 2021 . All rights reserved.
+-------------------------------------*/
+
+
+/* PostCSS custom media */
+
+@custom-media --screen-small (max-width: 639px);
+@custom-media --screen-medium (max-width: 1023px);
+@custom-media --screen-medium-only (min-width: 640px) and (max-width: 1023px);
+@custom-media --screen-large (min-width: 1024px);
+@custom-media --scheme-dark (prefers-color-scheme: dark);
+@custom-media --scheme-light (prefers-color-scheme: light);
+
+/* Using custom media:
+   @media (max-width: 639px) -> @media (--screen-small)
+   @media (prefers-color-scheme: dark) -> @media (--scheme-dark) */
+
+
+/* Variables */
+
+:root {
+    /* Modal */
+    --modal-background: #fff;
+    --modal-box-shadow: 0 6px 30px rgba(0,0,0,.25);
+    --modal-border-radius: 8px;
+    --modal-closer-color: #ccc;
+    --modal-overlay-background-color: rgba(0,0,0,.4);
+}

@@ -1,0 +1,146 @@
+/*-------------------------------------
+_buttons.css
+auto
+
+Created by Andrey Shpigunov on 09.05.2021
+Copyright © 2021 . All rights reserved.
+-------------------------------------*/
+
+
+
+/* Buttons */
+
+.button {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	padding: var(--button-padding);
+	color: var(--button-font-color);
+	font-family: var(--button-font-family);
+	font-size: var(--button-font-size);
+	font-weight: var(--button-font-weight);
+	vertical-align: bottom;
+	white-space: nowrap;
+	line-height: 1;
+	text-shadow: none;
+	text-transform: none;
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+	overflow: hidden;
+	border: none;
+	border-radius: var(--button-border-radius);
+	background-color: var(--button-color);
+	transition: var(--button-transition);
+	user-select: none;
+	appearance: none;
+    
+    &:hover,
+    &.hover {
+        text-decoration: none;
+        color: var(--button-font-color);
+        background-color: var(--button-color-hover);
+    }
+    
+    &:active,
+    &.active {
+        text-decoration: none;
+        color: var(--button-font-color);
+        background-color: var(--button-color-active);
+    }
+    
+    &[disabled],
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+    
+    &.bold {
+        font-weight: 700;
+    }
+    &.xsmall {
+        font-size: .8rem;
+    }
+    &.small {
+        font-size: .9rem;
+    }
+    &.large {
+        font-size: 1.2rem;
+    }
+    &.xlarge {
+        font-size: 1.4rem;
+    }
+}
+
+/* Primary */
+
+.button.primary {
+	color: var(--button-primary-font-color);
+	background-color: var(--button-primary-color);
+
+    &:hover,
+    &.hover {
+        color: var(--button-primary-font-color);
+        background-color: var(--button-primary-color-hover);
+    }
+    &:active,
+    &.active {
+        color: var(--button-primary-font-color);
+        background-color: var(--button-primary-color-active);
+    }
+}
+
+/* Success */
+
+.button.success {
+    color: var(--button-success-font-color);
+    background-color: var(--button-success-color);
+    
+    &:hover,
+    &.hover {
+        color: var(--button-success-font-color);
+        background-color: var(--button-success-color-hover);
+    }
+    &:active,
+    &.active {
+        color: var(--button-success-font-color);
+        background-color: var(--button-success-color-active);
+    }
+}
+
+/* Danger */
+
+.button.danger {
+    color: var(--button-danger-font-color);
+    background-color: var(--button-danger-color);
+    
+    &:hover,
+    &.hover {
+        color: var(--button-danger-font-color);
+        background-color: var(--button-danger-color-hover);
+    }
+    &:active,
+    &.active {
+        color: var(--button-danger-font-color);
+        background-color: var(--button-danger-color-active);
+    }
+}
+
+/* Warning */
+
+.button.warning {
+    color: var(--button-warning-font-color);
+    background-color: var(--button-warning-color);
+    
+    &:hover,
+    &.hover {
+        color: var(--button-warning-font-color);
+        background-color: var(--button-warning-color-hover);
+    }
+    &:active,
+    &.active {
+        color: var(--button-warning-font-color);
+        background-color: var(--button-warning-color-active);
+    }
+}

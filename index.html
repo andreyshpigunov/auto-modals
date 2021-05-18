@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Auto — super simple CSS+JS library for website</title>
+
+	<link rel="shortcut icon" href="https://andreyshpigunov.github.io/auto/i/logo.png">
+	<link rel="apple-touch-icon" href="https://andreyshpigunov.github.io/auto/i/apple-touch-icon.png">
+
+	<link rel="stylesheet" href="css/docs.css?v2" />
+</head>
+<body>
+	<div id="top" class="page">
+
+		<main>
+			<aside class="sidebar unselectable">
+				<div class="sidebar-logo small-hide">
+					<a data-scrollto="top">
+						<img src="i/logo.svg" alt="Auto"/>
+						<img class="-light" src="i/logo-light.svg" alt="Auto"/>
+					</a>
+				</div>
+			</aside>
+
+			<nav class="header-menu">
+				<ul>
+					<li class="active">Docs 1.0 β</li>
+					<li><a href="https://github.com/andreyshpigunov/auto">GitHub →</a></li>
+				</ul>
+			</nav>
+
+			<nav class="header-menu-mobile">
+				<ul>
+					<li class="header-menu-mobile_button">
+						<i></i>
+						<i></i>
+						<i></i>
+					</li>
+					<li class="header-menu-mobile_logo" data-scrollto="top">
+						<img src="i/logo.svg" alt="Auto"/>
+						<img class="-light" src="i/logo-light.svg" alt="Auto"/>
+					</li>
+					<li class="header-menu-mobile_github"><a href="https://github.com/andreyshpigunov/auto">GitHub →</a></li>
+				</ul>
+			</nav>
+
+			<section id="setup">
+				<h2>GitHub</h2>
+				<p>Download and connect files manually: <a href="https://github.com/andreyshpigunov/auto-modals">https://github.com/andreyshpigunov/auto-modals</a></p>
+				<p>It is better to implement styles in your project using scss, then all the settings will be available. if you connect a css file, you will have to manually override the settings with styles.</p>
+
+				<h2>CDN</h2>
+				<p>Current versions of files are available at the following links:</p>
+				<p>
+					<a href="https://gitcdn.link/repo/andreyshpigunov/auto-modals/main/css/auto-modals.css">https://gitcdn.link/repo/andreyshpigunov/auto-modals/main/css/auto-modals.css</a><br/>
+					<a href="https://gitcdn.link/repo/andreyshpigunov/auto-modals/main/js/auto-modals.js">https://gitcdn.link/repo/andreyshpigunov/auto-modals/main/js/auto-modals.js</a>
+				</p>
+			</section>
+
+			<section id="modal">
+				<h2>Modals</h2>
+				<p>Universal modal windows.</p>
+				<p>By default, the modal window code is added to the end of the body tag, but if you need to place it elsewhere, you need to add a class <code>.modal-here</code> to the block where the window code should be located.</p>
+
+				<h3>API</h3>
+				<p>
+					<code>auto.modal.show(id)</code> — open modal<br/>
+					<code>auto.modal.hide(id)</code> — close modal
+				</p>
+
+				<a class="button" data-modal="modal-test">Default modal</a>
+				<a class="button"  onclick="auto.modal.show('modal-test')">Show with API</a>
+				<div id="modal-test" class="modal-content">
+					<div class="text">
+						<h2>Modal windows</h2>
+						<p>Universal modal window.</p>
+						<p>By default, the modal window code is added to the end of the body tag, but if you need to place it elsewhere, you need to add a class <code>.modal-here</code> to the block where the window code should be located.</p>
+					</div>
+				</div>
+
+				<h3>Events</h3>
+				<p>
+					<code>modal:ready</code> — before modal opened<br/>
+					<code>modal:open</code> — modal opened<br/>
+					<code>modal:close</code> — modal closed
+				</p>
+				<p>
+					Example:<br/>
+					<code>document.getElementById('modal-id').addEventListener('modal:ready', event => { ... })</code>
+				</p>
+
+				<h3>Init modals</h3>
+				<iframe height="700" style="width: 100%;" scrolling="no" title="Auto / Modal init" src="https://codepen.io/andreyshpigunov/embed/vYXZGpm?height=700&theme-id=dark&default-tab=html" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+
+				<h3>Examples</h3>
+				<iframe height="800" style="width: 100%;" scrolling="no" title="Auto / Modals examples" src="https://codepen.io/andreyshpigunov/embed/KKgqzBE?height=800&theme-id=dark&default-tab=html" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+			</section>
+
+		</main>
+	</div>
+
+    <script src="js/auto-modals.js" ></script>
+    <script>
+        let html = document.documentElement;
+        let mobileButton = document.querySelector('.header-menu-mobile_button');
+
+        mobileButton.addEventListener('click', event => {
+            html.classList.toggle('show-menu')
+        })
+    </script>
+
+</body>
+</html>
